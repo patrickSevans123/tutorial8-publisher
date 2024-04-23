@@ -12,3 +12,7 @@ Picture of Running RabbitMQ:
 Picture of Subscriber's Console Output:
 ![console](img/console-subscriber.png)
 Gambar diatas menunjukkan bahwa subscriber menerima message dari publisher pada saat program publisher dijalankan berupa lima baris output pada console. Subscriber yang terhubung pada message broker akan menerima data yang dikirimkan oleh publisher ke message broker.
+
+Picture of Running RabbitMQ while sending and processing event:
+![rabbit](img/rabbitmq-second-screenshot.png)
+Gambar diatas menunjukkan adanya subscriber yang ditandai dengan "Connections: 1 dan Consumers: 1". Pada gambar juga terlihat bahwa message rates meningkat yang menunjukkan bahwa rata-rata message meningkat saat message dikirim oleh publisher.
