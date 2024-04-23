@@ -8,3 +8,7 @@
 
 Picture of Running RabbitMQ:
 ![rabbit](img/rabbitmq-first-screenshot.png)
+
+Picture of Subscriber's Console Output:
+![console](img/console-subscriber.png)
+Gambar diatas menunjukkan bahwa subscriber menerima message dari publisher pada saat program publisher dijalankan berupa lima baris output pada console. Subscriber yang terhubung pada message broker akan menerima data yang dikirimkan oleh publisher ke message broker.
