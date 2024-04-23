@@ -1,13 +1,10 @@
 use borsh::{BorshDeserialize, BorshSerialize};
 use crosstown_bus::{CrosstownBus, MessageHandler, HandleError};
-
 #[derive(Debug, Clone, BorshDeserialize, BorshSerialize)]
-
 pub struct UserCreatedEventMessage {
     pub user_id: String,
     pub user_name: String
 }
-
 pub struct UserCreatedHandler;
 impl MessageHandler<UserCreatedEventMessage> for
 UserCreatedHandler {
@@ -16,15 +13,13 @@ UserCreatedHandler {
         println!("Message received on handler 1: {:?}", message);
         Ok(())
     }
-
     fn get_handler_action(&self) -> String {
         todo!()
     }
-}
 
+}
 fn main() {
-    let mut p = CrosstownBus::new_queue_publisher("amqp://guest:guest@localhost:56
-    72".to_owned()).unwrap();
+    let mut p = CrosstownBus::new_queue_publisher("amqp://guest:guest@localhost:5672".to_owned()).unwrap();
 
     _ = p.publish_event("user_created".to_owned(),
                         UserCreatedEventMessage { user_id: "1".to_owned(), user_name:
@@ -45,5 +40,4 @@ fn main() {
     _ = p.publish_event("user_created".to_owned(),
                         UserCreatedEventMessage { user_id: "5".to_owned(), user_name:
                         "2206028251-Emir".to_owned() });
-
 }
